@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InDiet.API", "InDiet.API\InDiet.API.csproj", "{E79AD66B-4CD6-45AC-97B1-F7F8FA22974A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InDiet.WebAPI", "InDiet.WebAPI", "{674F58CD-CAA9-4DAB-82CA-BF1E6ADED513}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InDiet.Infrastructure", "InDiet.Infrastructure", "{E7795A49-C0AA-4AB2-8C9E-4B93988829B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InDiet.Data", "InDiet.Data\InDiet.Data.csproj", "{6E6F2DB7-6DB8-42FB-B1BF-6BDC6B388498}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InDiet.Logging", "InDiet.Logging\InDiet.Logging.csproj", "{00B4D705-E6F0-4F53-A9E9-5A7BEF433CFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InDiet.Business", "InDiet.Business\InDiet.Business.csproj", "{DA79E925-7386-4123-B82A-634AFA0A4D11}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InDiet.Web", "InDiet.Web", "{587B1EF5-747B-4852-AEDE-AA399436B9AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InDiet", "InDiet\InDiet.csproj", "{91FF7173-52A9-4CDE-AE5B-CF370BF5EAFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E79AD66B-4CD6-45AC-97B1-F7F8FA22974A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E79AD66B-4CD6-45AC-97B1-F7F8FA22974A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E79AD66B-4CD6-45AC-97B1-F7F8FA22974A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E79AD66B-4CD6-45AC-97B1-F7F8FA22974A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E6F2DB7-6DB8-42FB-B1BF-6BDC6B388498}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E6F2DB7-6DB8-42FB-B1BF-6BDC6B388498}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E6F2DB7-6DB8-42FB-B1BF-6BDC6B388498}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E6F2DB7-6DB8-42FB-B1BF-6BDC6B388498}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00B4D705-E6F0-4F53-A9E9-5A7BEF433CFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00B4D705-E6F0-4F53-A9E9-5A7BEF433CFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00B4D705-E6F0-4F53-A9E9-5A7BEF433CFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00B4D705-E6F0-4F53-A9E9-5A7BEF433CFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA79E925-7386-4123-B82A-634AFA0A4D11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA79E925-7386-4123-B82A-634AFA0A4D11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA79E925-7386-4123-B82A-634AFA0A4D11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA79E925-7386-4123-B82A-634AFA0A4D11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91FF7173-52A9-4CDE-AE5B-CF370BF5EAFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91FF7173-52A9-4CDE-AE5B-CF370BF5EAFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91FF7173-52A9-4CDE-AE5B-CF370BF5EAFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91FF7173-52A9-4CDE-AE5B-CF370BF5EAFA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E79AD66B-4CD6-45AC-97B1-F7F8FA22974A} = {674F58CD-CAA9-4DAB-82CA-BF1E6ADED513}
+		{6E6F2DB7-6DB8-42FB-B1BF-6BDC6B388498} = {E7795A49-C0AA-4AB2-8C9E-4B93988829B0}
+		{00B4D705-E6F0-4F53-A9E9-5A7BEF433CFB} = {E7795A49-C0AA-4AB2-8C9E-4B93988829B0}
+		{DA79E925-7386-4123-B82A-634AFA0A4D11} = {E7795A49-C0AA-4AB2-8C9E-4B93988829B0}
+		{91FF7173-52A9-4CDE-AE5B-CF370BF5EAFA} = {587B1EF5-747B-4852-AEDE-AA399436B9AB}
+	EndGlobalSection
+EndGlobal

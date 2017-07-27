@@ -1,0 +1,6 @@
+D:\R&D\InDiet\InDiet.Logging\bin\Debug\InDiet.Logging.dll
+D:\R&D\InDiet\InDiet.Logging\bin\Debug\InDiet.Logging.pdb
+D:\R&D\InDiet\InDiet.Logging\bin\Debug\log4net.dll
+D:\R&D\InDiet\InDiet.Logging\bin\Debug\log4net.xml
+D:\R&D\InDiet\InDiet.Logging\obj\Debug\InDiet.Logging.dll
+D:\R&D\InDiet\InDiet.Logging\obj\Debug\InDiet.Logging.pdb

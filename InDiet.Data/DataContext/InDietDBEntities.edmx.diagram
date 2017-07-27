@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f62366e28e3545ea9bc876cbefabaa32" Name="Diagram1">
+        <EntityTypeShape EntityType="InDietModel.tbl_Ailments" Width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="InDietModel.tbl_CityMaster" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="InDietModel.tbl_RoleMaster" Width="1.5" PointX="5.25" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="InDietModel.tbl_TokenDetails" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InDietModel.tbl_UserAddress" Width="1.5" PointX="8.25" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="InDietModel.tbl_UserAilments" Width="1.5" PointX="10.5" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="InDietModel.tbl_UserMaster" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="InDietModel.tbl_UserMasterGraphics" Width="1.5" PointX="5.25" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="InDietModel.tbl_UserRoleMapping" Width="1.5" PointX="5.25" PointY="20.875" IsExpanded="true" />
+        <AssociationConnector Association="InDietModel.FK_tbl_Ailments_tbl_UserMaster_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="InDietModel.FK_tbl_Ailments_tbl_UserMaster_ModifiedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="InDietModel.FK_tbl_UserAilments_tbl_Ailments" ManuallyRouted="false" />
+        <AssociationConnector Association="InDietModel.FK_tbl_CityMaster_tbl_UserMaster_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="InDietModel.FK_tbl_CityMaster_tbl_UserMaster_ModifiedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="InDietModel.FK_tbl_UserAddress_tbl_CityMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="InDietModel.FK_tbl_UserMaster_tbl_CityMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="InDietModel.FK_tbl_RoleMaster_tbl_UserMaster_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="InDietModel.FK_tbl_RoleMaster_tbl_UserMaster_ModifiedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="InDietModel.FK_tbl_UserAddress_tbl_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="InDietModel.FK_tbl_UserAddress_tbl_UserMaster_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="InDietModel.FK_tbl_UserAddress_tbl_UserMaster_ModifiedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="InDietModel.FK_tbl_UserAilments_tbl_UserMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="InDietModel.FK_tbl_UserAilments_tbl_UserMaster_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="InDietModel.FK_tbl_UserAilments_tbl_UserMaster_ModifiedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="InDietModel.FK_tbl_UserMaster_tbl_UserMaster_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="InDietModel.FK_tbl_UserMaster_tbl_UserMaster_ModifiedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="InDietModel.FK_tbl_UserMasterGraphics_tbl_UserMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="InDietModel.FK_tbl_UserMasterGraphics_tbl_UserMaster_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="InDietModel.FK_tbl_UserMasterGraphics_tbl_UserMaster_ModifiedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="InDietModel.FK_tbl_UserRoleMapping_tbl_UserMaster_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="InDietModel.FK_tbl_UserRoleMapping_tbl_UserMaster_ModifiedBy" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

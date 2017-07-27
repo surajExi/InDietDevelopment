@@ -1,0 +1,13 @@
+D:\R&D\InDiet\InDiet.Business\bin\Debug\InDiet.Business.dll.config
+D:\R&D\InDiet\InDiet.Business\bin\Debug\InDiet.Business.dll
+D:\R&D\InDiet\InDiet.Business\bin\Debug\InDiet.Business.pdb
+D:\R&D\InDiet\InDiet.Business\bin\Debug\EntityFramework.dll
+D:\R&D\InDiet\InDiet.Business\bin\Debug\EntityFramework.SqlServer.dll
+D:\R&D\InDiet\InDiet.Business\bin\Debug\InDiet.Data.dll
+D:\R&D\InDiet\InDiet.Business\bin\Debug\InDiet.Data.pdb
+D:\R&D\InDiet\InDiet.Business\bin\Debug\InDiet.Data.dll.config
+D:\R&D\InDiet\InDiet.Business\bin\Debug\EntityFramework.xml
+D:\R&D\InDiet\InDiet.Business\bin\Debug\EntityFramework.SqlServer.xml
+D:\R&D\InDiet\InDiet.Business\obj\Debug\InDiet.Business.csprojResolveAssemblyReference.cache
+D:\R&D\InDiet\InDiet.Business\obj\Debug\InDiet.Business.dll
+D:\R&D\InDiet\InDiet.Business\obj\Debug\InDiet.Business.pdb

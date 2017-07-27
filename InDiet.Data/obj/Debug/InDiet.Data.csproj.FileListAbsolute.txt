@@ -1,0 +1,9 @@
+D:\R&D\InDiet\InDiet.Data\bin\Debug\InDiet.Data.dll.config
+D:\R&D\InDiet\InDiet.Data\bin\Debug\InDiet.Data.dll
+D:\R&D\InDiet\InDiet.Data\bin\Debug\InDiet.Data.pdb
+D:\R&D\InDiet\InDiet.Data\bin\Debug\EntityFramework.dll
+D:\R&D\InDiet\InDiet.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\R&D\InDiet\InDiet.Data\bin\Debug\EntityFramework.xml
+D:\R&D\InDiet\InDiet.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\R&D\InDiet\InDiet.Data\obj\Debug\InDiet.Data.dll
+D:\R&D\InDiet\InDiet.Data\obj\Debug\InDiet.Data.pdb

@@ -1,0 +1,1198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="InDietModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_Ailments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_CityMaster">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_RoleMaster">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_TokenDetails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MobileNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Token" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_UserAddress">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserMasterID" Type="bigint" Nullable="false" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="500" />
+          <Property Name="CityID" Type="int" Nullable="false" />
+          <Property Name="State" Type="nvarchar" MaxLength="70" />
+          <Property Name="Country" Type="nvarchar" MaxLength="70" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_UserAilments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserMasterID" Type="bigint" Nullable="false" />
+          <Property Name="AilmentID" Type="bigint" Nullable="false" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_UserMaster">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="MobileNumber" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="100" />
+          <Property Name="Sex" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DOB" Type="datetime" />
+          <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="Height" Type="int" Nullable="false" />
+          <Property Name="Weight" Type="int" Nullable="false" />
+          <Property Name="CityID" Type="int" />
+          <Property Name="IsVerified" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_UserMasterGraphics">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserMaserID" Type="bigint" Nullable="false" />
+          <Property Name="GraphicFile" Type="varbinary(max)" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_UserRoleMapping">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserMasterID" Type="bigint" Nullable="false" />
+          <Property Name="RoleMasterID" Type="bigint" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_tbl_Ailments_tbl_UserMaster_CreatedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="1" />
+          <End Role="tbl_Ailments" Type="Self.tbl_Ailments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_Ailments">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Ailments_tbl_UserMaster_ModifiedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="0..1" />
+          <End Role="tbl_Ailments" Type="Self.tbl_Ailments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_Ailments">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_CityMaster_tbl_UserMaster_CreatedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="1" />
+          <End Role="tbl_CityMaster" Type="Self.tbl_CityMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_CityMaster">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_CityMaster_tbl_UserMaster_ModifiedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="0..1" />
+          <End Role="tbl_CityMaster" Type="Self.tbl_CityMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_CityMaster">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_RoleMaster_tbl_UserMaster_CreatedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="1" />
+          <End Role="tbl_RoleMaster" Type="Self.tbl_RoleMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_RoleMaster">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_RoleMaster_tbl_UserMaster_ModifiedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="0..1" />
+          <End Role="tbl_RoleMaster" Type="Self.tbl_RoleMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_RoleMaster">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserAddress_tbl_CityMaster">
+          <End Role="tbl_CityMaster" Type="Self.tbl_CityMaster" Multiplicity="1" />
+          <End Role="tbl_UserAddress" Type="Self.tbl_UserAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_CityMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserAddress">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserAddress_tbl_Customer">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="1" />
+          <End Role="tbl_UserAddress" Type="Self.tbl_UserAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserAddress">
+              <PropertyRef Name="UserMasterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserAddress_tbl_UserMaster_CreatedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="1" />
+          <End Role="tbl_UserAddress" Type="Self.tbl_UserAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserAddress">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserAddress_tbl_UserMaster_ModifiedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="0..1" />
+          <End Role="tbl_UserAddress" Type="Self.tbl_UserAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserAddress">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserAilments_tbl_Ailments">
+          <End Role="tbl_Ailments" Type="Self.tbl_Ailments" Multiplicity="1" />
+          <End Role="tbl_UserAilments" Type="Self.tbl_UserAilments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Ailments">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserAilments">
+              <PropertyRef Name="AilmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserAilments_tbl_UserMaster">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="1" />
+          <End Role="tbl_UserAilments" Type="Self.tbl_UserAilments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserAilments">
+              <PropertyRef Name="UserMasterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserAilments_tbl_UserMaster_CreatedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="1" />
+          <End Role="tbl_UserAilments" Type="Self.tbl_UserAilments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserAilments">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserAilments_tbl_UserMaster_ModifiedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="0..1" />
+          <End Role="tbl_UserAilments" Type="Self.tbl_UserAilments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserAilments">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserMaster_tbl_CityMaster">
+          <End Role="tbl_CityMaster" Type="Self.tbl_CityMaster" Multiplicity="0..1" />
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_CityMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserMaster">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserMaster_tbl_UserMaster_CreatedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="1" />
+          <End Role="tbl_UserMaster1" Type="Self.tbl_UserMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserMaster1">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserMaster_tbl_UserMaster_ModifiedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="0..1" />
+          <End Role="tbl_UserMaster1" Type="Self.tbl_UserMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserMaster1">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserMasterGraphics_tbl_UserMaster">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="1" />
+          <End Role="tbl_UserMasterGraphics" Type="Self.tbl_UserMasterGraphics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserMasterGraphics">
+              <PropertyRef Name="UserMaserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserMasterGraphics_tbl_UserMaster_CreatedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="1" />
+          <End Role="tbl_UserMasterGraphics" Type="Self.tbl_UserMasterGraphics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserMasterGraphics">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserMasterGraphics_tbl_UserMaster_ModifiedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="0..1" />
+          <End Role="tbl_UserMasterGraphics" Type="Self.tbl_UserMasterGraphics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserMasterGraphics">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserRoleMapping_tbl_UserMaster_CreatedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="1" />
+          <End Role="tbl_UserRoleMapping" Type="Self.tbl_UserRoleMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserRoleMapping">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserRoleMapping_tbl_UserMaster_ModifiedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="0..1" />
+          <End Role="tbl_UserRoleMapping" Type="Self.tbl_UserRoleMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserRoleMapping">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="InDietModelStoreContainer">
+          <EntitySet Name="tbl_Ailments" EntityType="Self.tbl_Ailments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_CityMaster" EntityType="Self.tbl_CityMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_RoleMaster" EntityType="Self.tbl_RoleMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_TokenDetails" EntityType="Self.tbl_TokenDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_UserAddress" EntityType="Self.tbl_UserAddress" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_UserAilments" EntityType="Self.tbl_UserAilments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_UserMaster" EntityType="Self.tbl_UserMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_UserMasterGraphics" EntityType="Self.tbl_UserMasterGraphics" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_UserRoleMapping" EntityType="Self.tbl_UserRoleMapping" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tbl_Ailments_tbl_UserMaster_CreatedBy" Association="Self.FK_tbl_Ailments_tbl_UserMaster_CreatedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_Ailments" EntitySet="tbl_Ailments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Ailments_tbl_UserMaster_ModifiedBy" Association="Self.FK_tbl_Ailments_tbl_UserMaster_ModifiedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_Ailments" EntitySet="tbl_Ailments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_CityMaster_tbl_UserMaster_CreatedBy" Association="Self.FK_tbl_CityMaster_tbl_UserMaster_CreatedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_CityMaster" EntitySet="tbl_CityMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_CityMaster_tbl_UserMaster_ModifiedBy" Association="Self.FK_tbl_CityMaster_tbl_UserMaster_ModifiedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_CityMaster" EntitySet="tbl_CityMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_RoleMaster_tbl_UserMaster_CreatedBy" Association="Self.FK_tbl_RoleMaster_tbl_UserMaster_CreatedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_RoleMaster" EntitySet="tbl_RoleMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_RoleMaster_tbl_UserMaster_ModifiedBy" Association="Self.FK_tbl_RoleMaster_tbl_UserMaster_ModifiedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_RoleMaster" EntitySet="tbl_RoleMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserAddress_tbl_CityMaster" Association="Self.FK_tbl_UserAddress_tbl_CityMaster">
+            <End Role="tbl_CityMaster" EntitySet="tbl_CityMaster" />
+            <End Role="tbl_UserAddress" EntitySet="tbl_UserAddress" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserAddress_tbl_Customer" Association="Self.FK_tbl_UserAddress_tbl_Customer">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserAddress" EntitySet="tbl_UserAddress" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserAddress_tbl_UserMaster_CreatedBy" Association="Self.FK_tbl_UserAddress_tbl_UserMaster_CreatedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserAddress" EntitySet="tbl_UserAddress" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserAddress_tbl_UserMaster_ModifiedBy" Association="Self.FK_tbl_UserAddress_tbl_UserMaster_ModifiedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserAddress" EntitySet="tbl_UserAddress" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserAilments_tbl_Ailments" Association="Self.FK_tbl_UserAilments_tbl_Ailments">
+            <End Role="tbl_Ailments" EntitySet="tbl_Ailments" />
+            <End Role="tbl_UserAilments" EntitySet="tbl_UserAilments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserAilments_tbl_UserMaster" Association="Self.FK_tbl_UserAilments_tbl_UserMaster">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserAilments" EntitySet="tbl_UserAilments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserAilments_tbl_UserMaster_CreatedBy" Association="Self.FK_tbl_UserAilments_tbl_UserMaster_CreatedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserAilments" EntitySet="tbl_UserAilments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserAilments_tbl_UserMaster_ModifiedBy" Association="Self.FK_tbl_UserAilments_tbl_UserMaster_ModifiedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserAilments" EntitySet="tbl_UserAilments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserMaster_tbl_CityMaster" Association="Self.FK_tbl_UserMaster_tbl_CityMaster">
+            <End Role="tbl_CityMaster" EntitySet="tbl_CityMaster" />
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserMaster_tbl_UserMaster_CreatedBy" Association="Self.FK_tbl_UserMaster_tbl_UserMaster_CreatedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserMaster1" EntitySet="tbl_UserMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserMaster_tbl_UserMaster_ModifiedBy" Association="Self.FK_tbl_UserMaster_tbl_UserMaster_ModifiedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserMaster1" EntitySet="tbl_UserMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserMasterGraphics_tbl_UserMaster" Association="Self.FK_tbl_UserMasterGraphics_tbl_UserMaster">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserMasterGraphics" EntitySet="tbl_UserMasterGraphics" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserMasterGraphics_tbl_UserMaster_CreatedBy" Association="Self.FK_tbl_UserMasterGraphics_tbl_UserMaster_CreatedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserMasterGraphics" EntitySet="tbl_UserMasterGraphics" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserMasterGraphics_tbl_UserMaster_ModifiedBy" Association="Self.FK_tbl_UserMasterGraphics_tbl_UserMaster_ModifiedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserMasterGraphics" EntitySet="tbl_UserMasterGraphics" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserRoleMapping_tbl_UserMaster_CreatedBy" Association="Self.FK_tbl_UserRoleMapping_tbl_UserMaster_CreatedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserRoleMapping" EntitySet="tbl_UserRoleMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserRoleMapping_tbl_UserMaster_ModifiedBy" Association="Self.FK_tbl_UserRoleMapping_tbl_UserMaster_ModifiedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserRoleMapping" EntitySet="tbl_UserRoleMapping" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="InDietModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_Ailments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_UserMaster" Relationship="Self.FK_tbl_Ailments_tbl_UserMaster_CreatedBy" FromRole="tbl_Ailments" ToRole="tbl_UserMaster" />
+          <NavigationProperty Name="tbl_UserMaster1" Relationship="Self.FK_tbl_Ailments_tbl_UserMaster_ModifiedBy" FromRole="tbl_Ailments" ToRole="tbl_UserMaster" />
+          <NavigationProperty Name="tbl_UserAilments" Relationship="Self.FK_tbl_UserAilments_tbl_Ailments" FromRole="tbl_Ailments" ToRole="tbl_UserAilments" />
+        </EntityType>
+        <EntityType Name="tbl_CityMaster">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_UserMaster" Relationship="Self.FK_tbl_CityMaster_tbl_UserMaster_CreatedBy" FromRole="tbl_CityMaster" ToRole="tbl_UserMaster" />
+          <NavigationProperty Name="tbl_UserMaster1" Relationship="Self.FK_tbl_CityMaster_tbl_UserMaster_ModifiedBy" FromRole="tbl_CityMaster" ToRole="tbl_UserMaster" />
+          <NavigationProperty Name="tbl_UserAddress" Relationship="Self.FK_tbl_UserAddress_tbl_CityMaster" FromRole="tbl_CityMaster" ToRole="tbl_UserAddress" />
+          <NavigationProperty Name="tbl_UserMaster2" Relationship="Self.FK_tbl_UserMaster_tbl_CityMaster" FromRole="tbl_CityMaster" ToRole="tbl_UserMaster" />
+        </EntityType>
+        <EntityType Name="tbl_RoleMaster">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_UserMaster" Relationship="Self.FK_tbl_RoleMaster_tbl_UserMaster_CreatedBy" FromRole="tbl_RoleMaster" ToRole="tbl_UserMaster" />
+          <NavigationProperty Name="tbl_UserMaster1" Relationship="Self.FK_tbl_RoleMaster_tbl_UserMaster_ModifiedBy" FromRole="tbl_RoleMaster" ToRole="tbl_UserMaster" />
+        </EntityType>
+        <EntityType Name="tbl_TokenDetails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MobileNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Token" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_UserAddress">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserMasterID" Type="Int64" Nullable="false" />
+          <Property Name="Address1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CityID" Type="Int32" Nullable="false" />
+          <Property Name="State" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_CityMaster" Relationship="Self.FK_tbl_UserAddress_tbl_CityMaster" FromRole="tbl_UserAddress" ToRole="tbl_CityMaster" />
+          <NavigationProperty Name="tbl_UserMaster" Relationship="Self.FK_tbl_UserAddress_tbl_Customer" FromRole="tbl_UserAddress" ToRole="tbl_UserMaster" />
+          <NavigationProperty Name="tbl_UserMaster1" Relationship="Self.FK_tbl_UserAddress_tbl_UserMaster_CreatedBy" FromRole="tbl_UserAddress" ToRole="tbl_UserMaster" />
+          <NavigationProperty Name="tbl_UserMaster2" Relationship="Self.FK_tbl_UserAddress_tbl_UserMaster_ModifiedBy" FromRole="tbl_UserAddress" ToRole="tbl_UserMaster" />
+        </EntityType>
+        <EntityType Name="tbl_UserAilments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserMasterID" Type="Int64" Nullable="false" />
+          <Property Name="AilmentID" Type="Int64" Nullable="false" />
+          <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_Ailments" Relationship="Self.FK_tbl_UserAilments_tbl_Ailments" FromRole="tbl_UserAilments" ToRole="tbl_Ailments" />
+          <NavigationProperty Name="tbl_UserMaster" Relationship="Self.FK_tbl_UserAilments_tbl_UserMaster" FromRole="tbl_UserAilments" ToRole="tbl_UserMaster" />
+          <NavigationProperty Name="tbl_UserMaster1" Relationship="Self.FK_tbl_UserAilments_tbl_UserMaster_CreatedBy" FromRole="tbl_UserAilments" ToRole="tbl_UserMaster" />
+          <NavigationProperty Name="tbl_UserMaster2" Relationship="Self.FK_tbl_UserAilments_tbl_UserMaster_ModifiedBy" FromRole="tbl_UserAilments" ToRole="tbl_UserMaster" />
+        </EntityType>
+        <EntityType Name="tbl_UserMaster">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MobileNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Sex" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DOB" Type="DateTime" Precision="3" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Height" Type="Int32" Nullable="false" />
+          <Property Name="Weight" Type="Int32" Nullable="false" />
+          <Property Name="CityID" Type="Int32" />
+          <Property Name="IsVerified" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_Ailments" Relationship="Self.FK_tbl_Ailments_tbl_UserMaster_CreatedBy" FromRole="tbl_UserMaster" ToRole="tbl_Ailments" />
+          <NavigationProperty Name="tbl_Ailments1" Relationship="Self.FK_tbl_Ailments_tbl_UserMaster_ModifiedBy" FromRole="tbl_UserMaster" ToRole="tbl_Ailments" />
+          <NavigationProperty Name="tbl_CityMaster" Relationship="Self.FK_tbl_CityMaster_tbl_UserMaster_CreatedBy" FromRole="tbl_UserMaster" ToRole="tbl_CityMaster" />
+          <NavigationProperty Name="tbl_CityMaster1" Relationship="Self.FK_tbl_CityMaster_tbl_UserMaster_ModifiedBy" FromRole="tbl_UserMaster" ToRole="tbl_CityMaster" />
+          <NavigationProperty Name="tbl_CityMaster2" Relationship="Self.FK_tbl_UserMaster_tbl_CityMaster" FromRole="tbl_UserMaster" ToRole="tbl_CityMaster" />
+          <NavigationProperty Name="tbl_RoleMaster" Relationship="Self.FK_tbl_RoleMaster_tbl_UserMaster_CreatedBy" FromRole="tbl_UserMaster" ToRole="tbl_RoleMaster" />
+          <NavigationProperty Name="tbl_RoleMaster1" Relationship="Self.FK_tbl_RoleMaster_tbl_UserMaster_ModifiedBy" FromRole="tbl_UserMaster" ToRole="tbl_RoleMaster" />
+          <NavigationProperty Name="tbl_UserAddress" Relationship="Self.FK_tbl_UserAddress_tbl_Customer" FromRole="tbl_UserMaster" ToRole="tbl_UserAddress" />
+          <NavigationProperty Name="tbl_UserAddress1" Relationship="Self.FK_tbl_UserAddress_tbl_UserMaster_CreatedBy" FromRole="tbl_UserMaster" ToRole="tbl_UserAddress" />
+          <NavigationProperty Name="tbl_UserAddress2" Relationship="Self.FK_tbl_UserAddress_tbl_UserMaster_ModifiedBy" FromRole="tbl_UserMaster" ToRole="tbl_UserAddress" />
+          <NavigationProperty Name="tbl_UserAilments" Relationship="Self.FK_tbl_UserAilments_tbl_UserMaster" FromRole="tbl_UserMaster" ToRole="tbl_UserAilments" />
+          <NavigationProperty Name="tbl_UserAilments1" Relationship="Self.FK_tbl_UserAilments_tbl_UserMaster_CreatedBy" FromRole="tbl_UserMaster" ToRole="tbl_UserAilments" />
+          <NavigationProperty Name="tbl_UserAilments2" Relationship="Self.FK_tbl_UserAilments_tbl_UserMaster_ModifiedBy" FromRole="tbl_UserMaster" ToRole="tbl_UserAilments" />
+          <NavigationProperty Name="tbl_UserMaster1" Relationship="Self.FK_tbl_UserMaster_tbl_UserMaster_CreatedBy" FromRole="tbl_UserMaster" ToRole="tbl_UserMaster1" />
+          <NavigationProperty Name="tbl_UserMaster2" Relationship="Self.FK_tbl_UserMaster_tbl_UserMaster_CreatedBy" FromRole="tbl_UserMaster1" ToRole="tbl_UserMaster" />
+          <NavigationProperty Name="tbl_UserMaster11" Relationship="Self.FK_tbl_UserMaster_tbl_UserMaster_ModifiedBy" FromRole="tbl_UserMaster" ToRole="tbl_UserMaster1" />
+          <NavigationProperty Name="tbl_UserMaster3" Relationship="Self.FK_tbl_UserMaster_tbl_UserMaster_ModifiedBy" FromRole="tbl_UserMaster1" ToRole="tbl_UserMaster" />
+          <NavigationProperty Name="tbl_UserMasterGraphics" Relationship="Self.FK_tbl_UserMasterGraphics_tbl_UserMaster" FromRole="tbl_UserMaster" ToRole="tbl_UserMasterGraphics" />
+          <NavigationProperty Name="tbl_UserMasterGraphics1" Relationship="Self.FK_tbl_UserMasterGraphics_tbl_UserMaster_CreatedBy" FromRole="tbl_UserMaster" ToRole="tbl_UserMasterGraphics" />
+          <NavigationProperty Name="tbl_UserMasterGraphics2" Relationship="Self.FK_tbl_UserMasterGraphics_tbl_UserMaster_ModifiedBy" FromRole="tbl_UserMaster" ToRole="tbl_UserMasterGraphics" />
+          <NavigationProperty Name="tbl_UserRoleMapping" Relationship="Self.FK_tbl_UserRoleMapping_tbl_UserMaster_CreatedBy" FromRole="tbl_UserMaster" ToRole="tbl_UserRoleMapping" />
+          <NavigationProperty Name="tbl_UserRoleMapping1" Relationship="Self.FK_tbl_UserRoleMapping_tbl_UserMaster_ModifiedBy" FromRole="tbl_UserMaster" ToRole="tbl_UserRoleMapping" />
+        </EntityType>
+        <EntityType Name="tbl_UserMasterGraphics">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserMaserID" Type="Int64" Nullable="false" />
+          <Property Name="GraphicFile" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_UserMaster" Relationship="Self.FK_tbl_UserMasterGraphics_tbl_UserMaster" FromRole="tbl_UserMasterGraphics" ToRole="tbl_UserMaster" />
+          <NavigationProperty Name="tbl_UserMaster1" Relationship="Self.FK_tbl_UserMasterGraphics_tbl_UserMaster_CreatedBy" FromRole="tbl_UserMasterGraphics" ToRole="tbl_UserMaster" />
+          <NavigationProperty Name="tbl_UserMaster2" Relationship="Self.FK_tbl_UserMasterGraphics_tbl_UserMaster_ModifiedBy" FromRole="tbl_UserMasterGraphics" ToRole="tbl_UserMaster" />
+        </EntityType>
+        <EntityType Name="tbl_UserRoleMapping">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserMasterID" Type="Int64" Nullable="false" />
+          <Property Name="RoleMasterID" Type="Int64" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_UserMaster" Relationship="Self.FK_tbl_UserRoleMapping_tbl_UserMaster_CreatedBy" FromRole="tbl_UserRoleMapping" ToRole="tbl_UserMaster" />
+          <NavigationProperty Name="tbl_UserMaster1" Relationship="Self.FK_tbl_UserRoleMapping_tbl_UserMaster_ModifiedBy" FromRole="tbl_UserRoleMapping" ToRole="tbl_UserMaster" />
+        </EntityType>
+        <Association Name="FK_tbl_Ailments_tbl_UserMaster_CreatedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="1" />
+          <End Role="tbl_Ailments" Type="Self.tbl_Ailments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_Ailments">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Ailments_tbl_UserMaster_ModifiedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="0..1" />
+          <End Role="tbl_Ailments" Type="Self.tbl_Ailments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_Ailments">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserAilments_tbl_Ailments">
+          <End Role="tbl_Ailments" Type="Self.tbl_Ailments" Multiplicity="1" />
+          <End Role="tbl_UserAilments" Type="Self.tbl_UserAilments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Ailments">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserAilments">
+              <PropertyRef Name="AilmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_CityMaster_tbl_UserMaster_CreatedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="1" />
+          <End Role="tbl_CityMaster" Type="Self.tbl_CityMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_CityMaster">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_CityMaster_tbl_UserMaster_ModifiedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="0..1" />
+          <End Role="tbl_CityMaster" Type="Self.tbl_CityMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_CityMaster">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserAddress_tbl_CityMaster">
+          <End Role="tbl_CityMaster" Type="Self.tbl_CityMaster" Multiplicity="1" />
+          <End Role="tbl_UserAddress" Type="Self.tbl_UserAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_CityMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserAddress">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserMaster_tbl_CityMaster">
+          <End Role="tbl_CityMaster" Type="Self.tbl_CityMaster" Multiplicity="0..1" />
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_CityMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserMaster">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_RoleMaster_tbl_UserMaster_CreatedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="1" />
+          <End Role="tbl_RoleMaster" Type="Self.tbl_RoleMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_RoleMaster">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_RoleMaster_tbl_UserMaster_ModifiedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="0..1" />
+          <End Role="tbl_RoleMaster" Type="Self.tbl_RoleMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_RoleMaster">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserAddress_tbl_Customer">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="1" />
+          <End Role="tbl_UserAddress" Type="Self.tbl_UserAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserAddress">
+              <PropertyRef Name="UserMasterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserAddress_tbl_UserMaster_CreatedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="1" />
+          <End Role="tbl_UserAddress" Type="Self.tbl_UserAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserAddress">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserAddress_tbl_UserMaster_ModifiedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="0..1" />
+          <End Role="tbl_UserAddress" Type="Self.tbl_UserAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserAddress">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserAilments_tbl_UserMaster">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="1" />
+          <End Role="tbl_UserAilments" Type="Self.tbl_UserAilments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserAilments">
+              <PropertyRef Name="UserMasterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserAilments_tbl_UserMaster_CreatedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="1" />
+          <End Role="tbl_UserAilments" Type="Self.tbl_UserAilments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserAilments">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserAilments_tbl_UserMaster_ModifiedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="0..1" />
+          <End Role="tbl_UserAilments" Type="Self.tbl_UserAilments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserAilments">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserMaster_tbl_UserMaster_CreatedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="1" />
+          <End Role="tbl_UserMaster1" Type="Self.tbl_UserMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserMaster1">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserMaster_tbl_UserMaster_ModifiedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="0..1" />
+          <End Role="tbl_UserMaster1" Type="Self.tbl_UserMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserMaster1">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserMasterGraphics_tbl_UserMaster">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="1" />
+          <End Role="tbl_UserMasterGraphics" Type="Self.tbl_UserMasterGraphics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserMasterGraphics">
+              <PropertyRef Name="UserMaserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserMasterGraphics_tbl_UserMaster_CreatedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="1" />
+          <End Role="tbl_UserMasterGraphics" Type="Self.tbl_UserMasterGraphics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserMasterGraphics">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserMasterGraphics_tbl_UserMaster_ModifiedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="0..1" />
+          <End Role="tbl_UserMasterGraphics" Type="Self.tbl_UserMasterGraphics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserMasterGraphics">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserRoleMapping_tbl_UserMaster_CreatedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="1" />
+          <End Role="tbl_UserRoleMapping" Type="Self.tbl_UserRoleMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserRoleMapping">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserRoleMapping_tbl_UserMaster_ModifiedBy">
+          <End Role="tbl_UserMaster" Type="Self.tbl_UserMaster" Multiplicity="0..1" />
+          <End Role="tbl_UserRoleMapping" Type="Self.tbl_UserRoleMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_UserRoleMapping">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="InDietDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_Ailments" EntityType="Self.tbl_Ailments" />
+          <EntitySet Name="tbl_CityMaster" EntityType="Self.tbl_CityMaster" />
+          <EntitySet Name="tbl_RoleMaster" EntityType="Self.tbl_RoleMaster" />
+          <EntitySet Name="tbl_TokenDetails" EntityType="Self.tbl_TokenDetails" />
+          <EntitySet Name="tbl_UserAddress" EntityType="Self.tbl_UserAddress" />
+          <EntitySet Name="tbl_UserAilments" EntityType="Self.tbl_UserAilments" />
+          <EntitySet Name="tbl_UserMaster" EntityType="Self.tbl_UserMaster" />
+          <EntitySet Name="tbl_UserMasterGraphics" EntityType="Self.tbl_UserMasterGraphics" />
+          <EntitySet Name="tbl_UserRoleMapping" EntityType="Self.tbl_UserRoleMapping" />
+          <AssociationSet Name="FK_tbl_Ailments_tbl_UserMaster_CreatedBy" Association="Self.FK_tbl_Ailments_tbl_UserMaster_CreatedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_Ailments" EntitySet="tbl_Ailments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Ailments_tbl_UserMaster_ModifiedBy" Association="Self.FK_tbl_Ailments_tbl_UserMaster_ModifiedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_Ailments" EntitySet="tbl_Ailments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserAilments_tbl_Ailments" Association="Self.FK_tbl_UserAilments_tbl_Ailments">
+            <End Role="tbl_Ailments" EntitySet="tbl_Ailments" />
+            <End Role="tbl_UserAilments" EntitySet="tbl_UserAilments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_CityMaster_tbl_UserMaster_CreatedBy" Association="Self.FK_tbl_CityMaster_tbl_UserMaster_CreatedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_CityMaster" EntitySet="tbl_CityMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_CityMaster_tbl_UserMaster_ModifiedBy" Association="Self.FK_tbl_CityMaster_tbl_UserMaster_ModifiedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_CityMaster" EntitySet="tbl_CityMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserAddress_tbl_CityMaster" Association="Self.FK_tbl_UserAddress_tbl_CityMaster">
+            <End Role="tbl_CityMaster" EntitySet="tbl_CityMaster" />
+            <End Role="tbl_UserAddress" EntitySet="tbl_UserAddress" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserMaster_tbl_CityMaster" Association="Self.FK_tbl_UserMaster_tbl_CityMaster">
+            <End Role="tbl_CityMaster" EntitySet="tbl_CityMaster" />
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_RoleMaster_tbl_UserMaster_CreatedBy" Association="Self.FK_tbl_RoleMaster_tbl_UserMaster_CreatedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_RoleMaster" EntitySet="tbl_RoleMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_RoleMaster_tbl_UserMaster_ModifiedBy" Association="Self.FK_tbl_RoleMaster_tbl_UserMaster_ModifiedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_RoleMaster" EntitySet="tbl_RoleMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserAddress_tbl_Customer" Association="Self.FK_tbl_UserAddress_tbl_Customer">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserAddress" EntitySet="tbl_UserAddress" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserAddress_tbl_UserMaster_CreatedBy" Association="Self.FK_tbl_UserAddress_tbl_UserMaster_CreatedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserAddress" EntitySet="tbl_UserAddress" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserAddress_tbl_UserMaster_ModifiedBy" Association="Self.FK_tbl_UserAddress_tbl_UserMaster_ModifiedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserAddress" EntitySet="tbl_UserAddress" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserAilments_tbl_UserMaster" Association="Self.FK_tbl_UserAilments_tbl_UserMaster">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserAilments" EntitySet="tbl_UserAilments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserAilments_tbl_UserMaster_CreatedBy" Association="Self.FK_tbl_UserAilments_tbl_UserMaster_CreatedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserAilments" EntitySet="tbl_UserAilments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserAilments_tbl_UserMaster_ModifiedBy" Association="Self.FK_tbl_UserAilments_tbl_UserMaster_ModifiedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserAilments" EntitySet="tbl_UserAilments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserMaster_tbl_UserMaster_CreatedBy" Association="Self.FK_tbl_UserMaster_tbl_UserMaster_CreatedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserMaster1" EntitySet="tbl_UserMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserMaster_tbl_UserMaster_ModifiedBy" Association="Self.FK_tbl_UserMaster_tbl_UserMaster_ModifiedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserMaster1" EntitySet="tbl_UserMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserMasterGraphics_tbl_UserMaster" Association="Self.FK_tbl_UserMasterGraphics_tbl_UserMaster">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserMasterGraphics" EntitySet="tbl_UserMasterGraphics" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserMasterGraphics_tbl_UserMaster_CreatedBy" Association="Self.FK_tbl_UserMasterGraphics_tbl_UserMaster_CreatedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserMasterGraphics" EntitySet="tbl_UserMasterGraphics" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserMasterGraphics_tbl_UserMaster_ModifiedBy" Association="Self.FK_tbl_UserMasterGraphics_tbl_UserMaster_ModifiedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserMasterGraphics" EntitySet="tbl_UserMasterGraphics" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserRoleMapping_tbl_UserMaster_CreatedBy" Association="Self.FK_tbl_UserRoleMapping_tbl_UserMaster_CreatedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserRoleMapping" EntitySet="tbl_UserRoleMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserRoleMapping_tbl_UserMaster_ModifiedBy" Association="Self.FK_tbl_UserRoleMapping_tbl_UserMaster_ModifiedBy">
+            <End Role="tbl_UserMaster" EntitySet="tbl_UserMaster" />
+            <End Role="tbl_UserRoleMapping" EntitySet="tbl_UserRoleMapping" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="InDietModelStoreContainer" CdmEntityContainer="InDietDBEntities">
+          <EntitySetMapping Name="tbl_Ailments">
+            <EntityTypeMapping TypeName="InDietModel.tbl_Ailments">
+              <MappingFragment StoreEntitySet="tbl_Ailments">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_CityMaster">
+            <EntityTypeMapping TypeName="InDietModel.tbl_CityMaster">
+              <MappingFragment StoreEntitySet="tbl_CityMaster">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_RoleMaster">
+            <EntityTypeMapping TypeName="InDietModel.tbl_RoleMaster">
+              <MappingFragment StoreEntitySet="tbl_RoleMaster">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_TokenDetails">
+            <EntityTypeMapping TypeName="InDietModel.tbl_TokenDetails">
+              <MappingFragment StoreEntitySet="tbl_TokenDetails">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_UserAddress">
+            <EntityTypeMapping TypeName="InDietModel.tbl_UserAddress">
+              <MappingFragment StoreEntitySet="tbl_UserAddress">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserMasterID" ColumnName="UserMasterID" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_UserAilments">
+            <EntityTypeMapping TypeName="InDietModel.tbl_UserAilments">
+              <MappingFragment StoreEntitySet="tbl_UserAilments">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserMasterID" ColumnName="UserMasterID" />
+                <ScalarProperty Name="AilmentID" ColumnName="AilmentID" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_UserMaster">
+            <EntityTypeMapping TypeName="InDietModel.tbl_UserMaster">
+              <MappingFragment StoreEntitySet="tbl_UserMaster">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_UserMasterGraphics">
+            <EntityTypeMapping TypeName="InDietModel.tbl_UserMasterGraphics">
+              <MappingFragment StoreEntitySet="tbl_UserMasterGraphics">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserMaserID" ColumnName="UserMaserID" />
+                <ScalarProperty Name="GraphicFile" ColumnName="GraphicFile" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_UserRoleMapping">
+            <EntityTypeMapping TypeName="InDietModel.tbl_UserRoleMapping">
+              <MappingFragment StoreEntitySet="tbl_UserRoleMapping">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserMasterID" ColumnName="UserMasterID" />
+                <ScalarProperty Name="RoleMasterID" ColumnName="RoleMasterID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
