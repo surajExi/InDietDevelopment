@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace InDiet
+namespace InDiet.API
 {
     public class FilterConfig
     {

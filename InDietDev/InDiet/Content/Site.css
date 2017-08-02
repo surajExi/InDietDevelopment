@@ -1,24 +1,518 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿/* login
+----------------------------------------------------------*/
+#login {
+    display: block;
+    font-size: .85em;
+    margin: 0 0 10px;
+    text-align: right;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    #login a {
+        background-color: #d3dce0;
+        margin-left: 10px;
+        margin-right: 3px;
+        padding: 2px 3px;
+        text-decoration: none;
+    }
+
+        #login a.username {
+            background: none;
+            margin: 0;
+            padding: 0;
+            text-decoration: underline;
+        }
+
+    #login ul {
+        margin: 0;
+    }
+
+    #login li {
+        display: inline;
+        list-style: none;
+    }
+
+/* login page */
+#loginForm {
+    border-right: solid 2px #c8c8c8;
+    float: left;
+    width: 55%;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+    #loginForm .validation-error {
+        display: block;
+        margin-left: 15px;
+    }
+
+    #loginForm .validation-summary-errors ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    #loginForm .validation-summary-errors li {
+        display: inline;
+        list-style: none;
+        margin: 0;
+    }
+
+    #loginForm input {
+        width: 250px;
+    }
+
+        #loginForm input[type="checkbox"],
+        #loginForm input[type="submit"],
+        #loginForm input[type="button"],
+        #loginForm button {
+            width: auto;
+        }
+
+#socialLoginForm {
+    margin-left: 40px;
+    float: left;
+    width: 40%;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+    #socialLoginForm h2 {
+        margin-bottom: 5px;
+    }
+
+#socialLoginList button {
+    margin-bottom: 12px;
+}
+
+#logoutForm {
+    display: inline;
+}
+
+/* contact */
+.contact h3 {
+    font-size: 1.2em;
+}
+
+.contact p {
+    margin: 5px 0 0 10px;
+}
+
+.contact iframe {
+    border: 1px solid #333;
+    margin: 5px 0 0 10px;
+}
+
+/* info and errors */
+.message-info {
+    border: 1px solid;
+    clear: both;
+    padding: 10px 20px;
+}
+
+.message-error {
+    clear: both;
+    color: #e80c4d;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+
+.message-success {
+    color: #7ac0da;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+
+.error {
+    color: #e80c4d;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #e80c4d;
+    font-weight: bold;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #e80c4d;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #e80c4d;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/********************
+*   Mobile Styles   *
+********************/
+@media only screen and (max-width: 850px) {
+
+    /* header
+    ----------------------------------------------------------*/
+    header .float-left,
+    header .float-right {
+        float: none;
+    }
+
+    /* logo */
+    header .site-title {
+        margin: 10px;
+        text-align: center;
+    }
+
+    /* login */
+    #login {
+        font-size: .85em;
+        margin: 0 0 12px;
+        text-align: center;
+    }
+
+        #login ul {
+            margin: 5px 0;
+            padding: 0;
+        }
+
+        #login li {
+            display: inline;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #login a {
+            background: none;
+            color: #999;
+            font-weight: 600;
+            margin: 2px;
+            padding: 0;
+        }
+
+            #login a:hover {
+                color: #333;
+            }
+
+    /* menu */
+    nav {
+        margin-bottom: 5px;
+    }
+
+    ul#menu {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+        ul#menu li {
+            margin: 0;
+            padding: 0;
+        }
+
+
+    /* main layout
+    ----------------------------------------------------------*/
+    .main-content,
+    .featured + .main-content {
+        background-position: 10px 0;
+    }
+
+    .content-wrapper {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .featured .content-wrapper {
+        padding: 10px;
+    }
+
+    /* page content */
+    article, aside {
+        float: none;
+        width: 100%;
+    }
+
+    /* ordered list */
+    ol.round {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+        ol.round li {
+            padding-left: 10px;
+            margin: 25px 0;
+        }
+
+            ol.round li.zero,
+            ol.round li.one,
+            ol.round li.two,
+            ol.round li.three,
+            ol.round li.four,
+            ol.round li.five,
+            ol.round li.six,
+            ol.round li.seven,
+            ol.round li.eight,
+            ol.round li.nine {
+                background: none;
+            }
+
+    /* features */
+    section.feature {
+        float: none;
+        padding: 10px;
+        width: auto;
+    }
+
+        section.feature img {
+            color: #999;
+            content: attr(alt);
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+    /* forms */
+    input {
+        width: 90%;
+    }
+
+    /* login page */
+    #loginForm {
+        border-right: none;
+        float: none;
+        width: auto;
+    }
+
+        #loginForm .validation-error {
+            display: block;
+            margin-left: 15px;
+        }
+
+    #socialLoginForm {
+        margin-left: 0;
+        float: none;
+        width: auto;
+    }
+
+
+    /* footer
+    ----------------------------------------------------------*/
+    footer .float-left,
+    footer .float-right {
+        float: none;
+    }
+
+    footer {
+        text-align: center;
+        height: auto;
+        padding: 10px 0;
+    }
+
+        footer p {
+            margin: 0;
+        }
+}
+
+/* Login Form */
+.LoginBody {
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/MeetingBg.jpg");
+    /*background: rgb(109, 209, 136);*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.overlayBg {
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(109, 209, 136, 0.08);
+}
+/* Login form design */
+.LoginService {
+    margin-top: 100px;
+    width: 100%;
+    padding: 1em;
+    background: rgba(4, 0, 21, 0.61);
+    border-radius: 7px;
+    border: 1px solid rgba(248, 240, 240, 0.61);
+    color: #fff;
+}
+
+#UserName {
+    background-image: url(../images/cd-icon-username.svg);
+    background-position: 7px 15px;
+    background-repeat: no-repeat;
+    padding: 0 20px 0 35px;
+    border: 1px solid rgb(248, 240, 240);
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-radius: 0;
+    color: #fff !important;
+}
+
+#Password {
+    background-image: url(../images/cd-icon-password.svg);
+    background-position: 7px 15px;
+    background-repeat: no-repeat;
+    padding: 0 20px 0 35px;
+    border: 1px solid rgb(248, 240, 240);
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-radius: 0;
+    color: #2a2727 !important;
+}
+
+    #UserName:focus, #Password:focus {
+        border-color: #2a2727 !important;
+    }
+
+.fill-AAE-green {
+    background: rgb(81, 174, 105);
+    border-color: rgb(81, 174, 105);
+    font-size: 20px;
+    padding: 10px 25px;
+}
+
+.anchrBtnSubmit {
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+#RememberMe {
+}
+
+
+.Login-form-control {
+    box-shadow: none !important;
+    background: transparent;
+    color: #fff;
+    height: 54px !important;
+    font-size: 18px !important;
+    font-weight: 300 !important;
+}
+
+#D-Footer {
+    background: rgb(48, 48, 48);
+    padding: 2em 0 !important;
+    clear: both;
+    margin-bottom: -30px !important;
+    margin-top: 100px;
+}
+
+footer {
+    margin-bottom: -30px !important;
+}
+
+.meetingFooterlinks {
+    float: left;
+}
+
+#D-Footer .meetingFooterlinks {
+    padding: 0;
+    margin: 0;
+}
+
+    #D-Footer .meetingFooterlinks li {
+        padding: 0;
+        margin: 0;
+        float: left;
+        margin-left: 20px;
+        list-style: none;
+    }
+
+        #D-Footer .meetingFooterlinks li a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+            #D-Footer .meetingFooterlinks li a:hover {
+                text-decoration: underline;
+            }
+
+.overlay {
+    z-index: 0;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
+    transition: width 2s, height 2s, background-color 2s, transform 2s;
+}
+
+.k-grid-add {
+    background: rgb(105, 134, 228) !important;
+    border-color: rgb(105, 134, 228) !important;
+    color: #fff !important;
+}
+
+.k-grid-edit {
+    background: rgb(81, 174, 105) !important;
+    border-color: rgb(81, 174, 105) !important;
+    color: #fff !important;
+}
+
+span.k-icon {
+    color: #ffffff !important;
+}
+
+.k-grid-toolbar-custom {
+    padding: 15px !important;
+    background: #f5f5f5 !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-bottom: none !important;
+}
+
+.btn-Green {
+    background: rgb(81, 174, 105) !important;
+    border-color: rgb(81, 174, 105) !important;
+    color: #fff !important;
+}
+
+.logOut a {
+    text-decoration: none !important;
+    display: block !important;
+    padding: 20px;
+    /*background:rgba(219, 230, 234, 0.46);*/
+}
+
+    .logOut a:hover {
+        background: rgba(219, 230, 234, 0.46);
+    }
+
+.container {
+    position: relative;
+    width: 100% !important;
+    padding: 0 !important;
+}
+
+.row {
+    margin: 5px !important;
+}
+
+.form-group, .form-control {
+    padding: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    clear: both !important;
+}
+
+.AuthorizationDisable:hover, .AuthorizationDisable:active, .AuthorizationDisable:focus {
+    cursor: not-allowed !important;
 }

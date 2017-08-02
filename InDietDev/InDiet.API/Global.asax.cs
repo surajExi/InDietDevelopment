@@ -1,4 +1,4 @@
-﻿using InDiet.App_Start;
+﻿using InDiet.API.App_Start;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace InDiet
+namespace InDiet.API
 {
     public class WebApiApplication : System.Web.HttpApplication
     {

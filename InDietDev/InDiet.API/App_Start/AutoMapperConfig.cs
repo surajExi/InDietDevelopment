@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using InDiet.Data.DataContext;
-using InDiet.Models;
+using InDiet.API.Models;
 
-namespace InDiet.App_Start
+namespace InDiet.API.App_Start
 {
     public class AutoMapperConfig
     {
@@ -15,6 +15,7 @@ namespace InDiet.App_Start
             Mapper.Initialize(config =>
             {
                 config.CreateMap<tbl_UserMaster, UserMasterModel>();
+                config.CreateMap<tbl_UserMaster, LoginViewModel>();
             });
         }
     }

@@ -11,3 +11,16 @@ D:\R&D\InDiet\InDiet.Business\bin\Debug\EntityFramework.SqlServer.xml
 D:\R&D\InDiet\InDiet.Business\obj\Debug\InDiet.Business.csprojResolveAssemblyReference.cache
 D:\R&D\InDiet\InDiet.Business\obj\Debug\InDiet.Business.dll
 D:\R&D\InDiet\InDiet.Business\obj\Debug\InDiet.Business.pdb
+D:\Products\InDietDevelopment\InDietDev\InDiet.Business\bin\Debug\InDiet.Business.dll.config
+D:\Products\InDietDevelopment\InDietDev\InDiet.Business\bin\Debug\InDiet.Business.dll
+D:\Products\InDietDevelopment\InDietDev\InDiet.Business\bin\Debug\InDiet.Business.pdb
+D:\Products\InDietDevelopment\InDietDev\InDiet.Business\bin\Debug\EntityFramework.dll
+D:\Products\InDietDevelopment\InDietDev\InDiet.Business\bin\Debug\EntityFramework.SqlServer.dll
+D:\Products\InDietDevelopment\InDietDev\InDiet.Business\bin\Debug\InDiet.Data.dll
+D:\Products\InDietDevelopment\InDietDev\InDiet.Business\bin\Debug\InDiet.Data.pdb
+D:\Products\InDietDevelopment\InDietDev\InDiet.Business\bin\Debug\InDiet.Data.dll.config
+D:\Products\InDietDevelopment\InDietDev\InDiet.Business\bin\Debug\EntityFramework.xml
+D:\Products\InDietDevelopment\InDietDev\InDiet.Business\bin\Debug\EntityFramework.SqlServer.xml
+D:\Products\InDietDevelopment\InDietDev\InDiet.Business\obj\Debug\InDiet.Business.csprojResolveAssemblyReference.cache
+D:\Products\InDietDevelopment\InDietDev\InDiet.Business\obj\Debug\InDiet.Business.dll
+D:\Products\InDietDevelopment\InDietDev\InDiet.Business\obj\Debug\InDiet.Business.pdb
